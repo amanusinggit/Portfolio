@@ -1,6 +1,12 @@
+import { Outlet } from 'react-router';
+import Header from './Components/Header';
+   
 const App = () => {
     return (
-        <div> APP COMPONENT</div>
+        <>
+            <Header />
+            <Outlet />
+        </>
     );
 }
 
