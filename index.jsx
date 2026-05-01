@@ -6,6 +6,7 @@ import Profile from './Components/Profile.jsx';
 import Skills from './Components/Skills.jsx';
 import Socials from './Components/Socials.jsx';
 import Projects from './Components/Projects.jsx';
+import { Navigate } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,6 +15,10 @@ const routeConfig = createBrowserRouter([
         path: '/',
         element: <App/>, 
         children: [
+            {
+                index: true,
+                element: <Navigate to="/profile" replace />   // 👈 redirect
+            },
             {
                 path: "profile",
                 element: <Profile />
