@@ -17,7 +17,7 @@ const routeConfig = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to="/profile" replace />   // 👈 redirect
+                element: <Navigate to="/profile" replace />   
             },
             {
                 path: "profile",
