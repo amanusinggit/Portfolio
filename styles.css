@@ -170,9 +170,16 @@ box-shadow:  5px 5px 7px #121417,
 
 .skills-container {
     display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    flex: 1;
+}
+
+.skills-name-container {
+    display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 2rem;
 }
 
 .skill-card {
@@ -215,4 +222,15 @@ box-shadow:  5px 5px 7px #121417,
 .github {
     background-color: #333;
     color: white;
+}
+
+.skill-detail {
+    border-radius: 20px;
+    padding: 2rem;
+    flex: 1;
+    overflow: y-scroll;
+}
+
+.proof-links > a {
+    display: block;
 }

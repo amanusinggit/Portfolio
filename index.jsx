@@ -34,9 +34,13 @@ const routeConfig = createBrowserRouter([
             {
                 path: "projects",
                 element: <Projects />
+            },
+            {
+                path: '/skills/:skillName',
+                element: <Skills />
             }
         ]
-    },
+    }
 ]);
 
 root.render(<RouterProvider router={routeConfig} />);
