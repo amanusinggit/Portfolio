@@ -1,22 +1,24 @@
 import { useState } from "react";
 import {tabs} from '../tab-data';
-import { Link } from "react-router-dom";
+import { Link, NavLink, useParams } from "react-router-dom";
 
-const NavItems = ({to, icon, label, active, onClick}) => {
+const NavItems = ({to, icon, label}) => {
+    console.log(to, icon , label);
     return (
-        <Link to={to} className={`nav-items ${active ? 'active' : ''}`} onClick={onClick}>
-            <i className={icon}></i>
-            {active ? <span>{label}</span>  : null} 
-        </Link>
+        <NavLink to={to} className={({isActive}) => `nav-items ${isActive ? 'active' : ''}`}>
+            {({isActive}) => {
+                console.log(isActive);
+                return (
+                    <>
+                        <i className={icon}></i>
+                        {isActive ? <span>{label}</span>  : null }
+                    </>
+                );
+            }}
+        </NavLink>
     );
 }
 const Header = () => {
-    const [activeTab, setActiveTab] = useState(0);
-
-    const activateTab = (index) => {
-        console.log("clicked");
-        setActiveTab(index);
-    }
 
     return (
         <div className="header">
@@ -27,9 +29,7 @@ const Header = () => {
                         key={index}
                         icon={tab.icon}
                         label={tab.label}
-                        active={index === activeTab}
                         to={tab.to}
-                        onClick={() => {console.log("clicked");activateTab(index)}}
                     />
                 ))}
             </div>

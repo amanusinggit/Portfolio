@@ -17,7 +17,7 @@ const routeConfig = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to="/profile" replace />   // 👈 redirect
+                element: <Navigate to="/profile" replace />   
             },
             {
                 path: "profile",
@@ -34,9 +34,13 @@ const routeConfig = createBrowserRouter([
             {
                 path: "projects",
                 element: <Projects />
+            },
+            {
+                path: '/skills/:skillName',
+                element: <Skills />
             }
         ]
-    },
+    }
 ]);
 
 root.render(<RouterProvider router={routeConfig} />);
